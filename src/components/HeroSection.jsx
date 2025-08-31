@@ -1,21 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import myImage from "../assets/my pic.jpg"; // <-- apni image ka path daaliye
+import myImage from "../assets/my pic.jpg"; // <-- your image path
 
 const ButtonRotatingBackgroundGradient = () => {
   return (
-    <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900">
-      <span
-        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
-        bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
-      />
-      <span
-        className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full 
-        bg-gray-950 px-8 py-1 text-sm font-medium text-gray-50 backdrop-blur-3xl"
-      >
-        View My Work
-      </span>
-    </button>
+    <a href="#projects">
+      <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900">
+        <span
+          className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
+          bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+        />
+        <span
+          className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full 
+          bg-gray-950 px-8 py-1 text-sm font-medium text-gray-50 backdrop-blur-3xl font-calligraphy"
+        >
+          View My Work
+        </span>
+      </button>
+    </a>
   );
 };
 
@@ -43,16 +45,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-6xl font-extrabold text-blue-400 drop-shadow-lg"
+          className="text-5xl md:text-6xl pt-20 font-extrabold text-blue-400 drop-shadow-lg font-calligraphy"
         >
-          Hi, I'm <span className="text-white">Aanchal Vijay</span>
+          Hi, I'm <span className="text-white font-serif ">Aanchal Vijay</span>
         </motion.h1>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-4 text-2xl md:text-3xl font-semibold text-gray-200"
+          className="mt-4 pt-2.5 text-2xl md:text-3xl font-semibold text-gray-200 "
         >
           Frontend Developer
         </motion.h2>
@@ -71,7 +73,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-10"
+          className="mt-30"
         >
           <ButtonRotatingBackgroundGradient />
         </motion.div>

@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_h7riwj5",   // <-- apna service ID daalo
+        "template_a4wa7uu",  // <-- apna template ID daalo
+        form.current,
+        "ocAp3tWUtgZ3Vbvjf"    // <-- apna public key daalo
+      )
+      .then(
+        (result) => {
+          alert("Message Sent Successfully ✅");
+          form.current.reset(); // form clear karne ke liye
+        },
+        (error) => {
+          alert("Something went wrong ❌ " + error.text);
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
@@ -34,6 +58,8 @@ export default function Contact() {
 
       {/* Contact Form */}
       <motion.form
+        ref={form}
+        onSubmit={sendEmail}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 1 }}
@@ -42,18 +68,24 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <input
             type="text"
+            name="user_name"
             placeholder="Your Name"
+            required
             className="p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <input
             type="email"
+            name="user_email"
             placeholder="Your Email"
+            required
             className="p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <textarea
+          name="message"
           placeholder="Your Message"
           rows="5"
+          required
           className="w-full mt-6 p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         ></textarea>
         <button
