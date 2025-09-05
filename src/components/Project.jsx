@@ -24,8 +24,8 @@ const projects = [
     title: "Sawariya Car Decor Website",
     description:
     "A live modern responsive business website for an car decor store, built with React & Tailwind CSS.",
-    liveLink: null,
-    githubLink: "https://sawariya-car-decor-kota.netlify.app/",
+    liveLink: "https://sawariya-car-decor-kota.netlify.app/",
+    githubLink: "https://github.com/aanchalvj/car-website",
     tech: ["Tailwind CSS", "React","Vite" ],
   },
 ];
