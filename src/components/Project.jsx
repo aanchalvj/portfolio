@@ -20,6 +20,14 @@ const projects = [
     githubLink: "https://github.com/aanchalvj/first-website",
     tech: ["HTML", "CSS", "React"],
   },
+  {
+    title: "Sawariya Car Decor Website",
+    description:
+    "A live modern responsive business website for an car decor store, built with React & Tailwind CSS.",
+    liveLink: "https://sawariya-car-decor-kota.netlify.app/",
+    githubLink: "https://github.com/aanchalvj/car-website",
+    tech: ["Tailwind CSS", "React","Vite" ],
+  },
 ];
 
 export default function Projects() {
